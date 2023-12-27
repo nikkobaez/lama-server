@@ -29,6 +29,10 @@ app.use("/wishlist", wishlistRoute);
 app.use("/stripe", stripeRoute);
 app.use("/order", orderRoute)
 
+app.get("/", (req, res) => {
+    res.send("<h1>Hello, World!</h1>");
+});
+
 app.listen(process.env.PORT || 3001, () => {
     console.log("Listening To Port 3001")
 });

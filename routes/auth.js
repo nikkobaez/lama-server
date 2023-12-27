@@ -5,9 +5,6 @@ const JWT = require("jsonwebtoken");
 
 /* REGISTER A NEW USER */
 router.post("/register", async (req, res) => {
-
- 
-
     const user = await User.findOne({ email: req.body.email })
 
     if (user) {
