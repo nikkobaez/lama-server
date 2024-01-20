@@ -1,8 +1,9 @@
 const Order = require("../models/Order");
 const router = require("express").Router();
+const { verifyTokenAndUser } = require("./token");
 
 /* CREATE AN ORDER */
-router.post("/", async (req, res) => {
+router.post("/", verifyTokenAndUser, async (req, res) => {
     const newOrder = new Order({
         email: req.body.email,
         products: req.body.products,
