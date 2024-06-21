@@ -15,7 +15,7 @@ router.post('/create-checkout-session', async (req, res) => {
         })
         res.status(200).json({ sessionId: session.id });
     } catch (error) {
-        res.status(500).json("An error has occured")
+        res.status(500).json("An error has occured right here")
     }
 });
 
@@ -25,7 +25,7 @@ router.post("/retrieve-checkout-session", async (req, res) => {
         const session = await stripe.checkout.sessions.retrieve(req.body.sessionId)
         res.status(200).json(session)
     } catch (error) {
-        res.status(500).json("An error has occured")
+        res.status(500).json("An error has occured right here")
     }
 })
 
